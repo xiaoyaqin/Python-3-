@@ -28,7 +28,22 @@ print('ABC', file = f, flush = True)
 
 #关于sys.stdout
 '''
+os和sys是两个非常常见的和操作系统交互的模块。
+os负责程序与操作系统的交互，sys负责程序与python解释器的交互。
+比如说，os.path.split、os.system等，这些都是在和OS交互。
+值得注意的，os.fork只在*nix上可用，这也说明了「os模块负责与操作系统的交互」。
+至于sys呢，sys.exit让解释器停止你的程序、sys.version获得python解释器（而非操作系统）的版本号、
+sys.argv获得你的程序的参数……所以说sys是与解释器高度相关的。
+(https://www.zhihu.com/question/31843617)
 
+sys模块对外没有.py文件，它是内置于解释器中的，上面的代码是sys模块的源代码（c语言）。
+因为sys模块是整个python的基础，因此不要进行轻易的修改。
+(http://bbs.bccn.net/thread-330592-1-1.html)
+
+stdin stdout stderr
+std：标准
+标准输入 标准输出 标准错误
+sys.stdout通常来讲，就是输出到屏幕
 '''
 #示例
 a,b,c=1,2,3 #默认输出
